@@ -1,4 +1,75 @@
-.app {
-  margin-top: 20px;
-  margin-bottom: 20px;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap');
+
+body {
+  background-color: rgba(240, 239, 239, 1.00);
+  font-family: 'Open Sans', sans-serif;
+  height: 100vh;
+  width: 100vw;
 }
+
+.container {
+  width: 85vw;
+}
+
+.app {
+  background-color: white;
+  height: 85vh;
+  width: 100%;
+  margin: 7.5vh auto;
+  border-radius: 16px;
+  box-shadow: 8px 8px 16px rgba(128, 128, 133, 0.6);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.garage-info {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right-window {
+  background-color: rgba(128, 128, 133, 1.00);
+  border-radius: 0 16px 16px 0;
+  width: 70%;
+  height: 100%;
+  padding: 12px;
+  overflow: scroll;
+}
+
+.car-card {
+  background-color: white;
+  height: 64px;
+  display: flex;
+  margin-bottom: 8px;
+  padding: 8px;
+  border-radius: 8px;
+
+  img {
+    height: 90%;
+  }
+
+  .car-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    p {
+      margin: 0 0 0 24px;
+    }
+
+    .car-type {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .car-owner {
+      span {
+        font-weight: 700;
+      }
+    }
+
+  }
+}
+
