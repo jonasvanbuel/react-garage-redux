@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 // Components
@@ -17,7 +18,11 @@ class CarsIndex extends Component {
     return (
       <div className="right-window">
         {this.props.cars.map((car) => {
-          return <Car car={car} key={car.id} />;
+          return (
+            <Link to={`/cars/${car.id}`}>
+              <Car car={car} key={car.id} />;
+            </Link>
+          );
         })}
       </div>
     );

@@ -13,6 +13,7 @@ import '../assets/stylesheets/application.scss';
 // Components
 import CarsIndex from './containers/cars_index';
 import CarsNew from './containers/cars_new';
+import CarsShow from './containers/cars_show';
 
 // Reducers
 import carsReducer from './reducers/cars_reducer';
@@ -43,6 +44,7 @@ ReactDOM.render(
           </div>
           <Route path="/" exact component={CarsIndex} />
           <Route path="/new" exact component={CarsNew} />
+          <Route path="/cars/:id" component={CarsShow} />
         </div>
       </Switch>
     </Router>

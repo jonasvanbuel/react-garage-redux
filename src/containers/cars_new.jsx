@@ -10,14 +10,20 @@ import { Field, reduxForm } from 'redux-form';
 import { createCar } from '../actions/index';
 
 class CarsNew extends Component {
-  submit = (values) => {
-    console.log(values);
+  onSubmit = (values) => {
+    this.props.createCar(values, (post) => {
+      this.props.history.push('/');
+      return post;
+    });
   }
 
+  // 'handleSubmit' below gets passed to component's props by 'redux-form'.
+  // 'values' is a default redux-form argument.
+  // You need to pass your custom onSubmit function to it!
   render() {
     return (
       <div className="right-window">
-        <form onSubmit={this.submit}>
+        <form onSubmit={this.props.handleSubmit(this.onSubmit)}>
           <div>
             <label htmlFor="brand">Brand</label>
             <Field name="brand" component="input" type="text" />
